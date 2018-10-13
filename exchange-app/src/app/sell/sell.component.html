@@ -1,0 +1,65 @@
+<div class="sell-body">
+  <h2>Tạo thông tin mặt hàng muốn bán</h2>
+  <form (ngSubmit)="createProduct()" #createProForm="ngForm">
+    Tên mặt hàng:<br>
+    <input type="text" [(ngModel)]="productObject.name" #name="ngModel" name="name">
+    <br>
+    Loại mặt hàng:<br>
+    <input type="text" [(ngModel)]="productObject.productType" #name="ngModel" name="productType">
+    <mat-form-field>
+      <mat-select placeholder="Chọn mặt hàng" [formControl]="productTypeControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let proType of proTypes" [value]="proType">
+          {{proType.value}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="productTypeControl.hasError('required')">Vui lòng chọn mặt hàng tương ứng</mat-error>
+    </mat-form-field>
+    <br>
+    Giá trên đơn vị sản phẩm:<br>
+    <input type="text" [(ngModel)]="productObject.pricePerUnit" #name="ngModel" name="pricePerUnit">
+    <br>
+    Số lượng:<br>
+    <input type="text" [(ngModel)]="productObject.amount" #name="ngModel" name="amount">
+    <br>
+    Ảnh:<br>
+    <input type="file" accept="image/*" (change)="changeListener($event)">
+    <img height="100px" width="125px" src="{{image}}" alt="">
+    <br>
+    Miêu tả:<br>
+    <input type="text" [(ngModel)]="productObject.description" #name="ngModel" name="description">
+    <br>
+    <button type="submit" class="primary">
+      <span>Đăng mặt hàng</span>
+    </button>
+  </form>
+</div>
+
+<!-- <div class="sell-body">
+  <mat-form-field>
+    <mat-select placeholder="Favorite product" [formControl]="productTypeControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let proType of proTypes" [value]="proType">
+        {{proType.value}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="productTypeControl.hasError('required')">Please choose an animal</mat-error>
+  </mat-form-field>
+  
+      Giá trên đơn vị sản phẩm:<br>
+      <input type="text"  name="pricePerUnit">
+      <br>
+      Số lượng:<br>
+      <input type="text" >
+      <br>
+      Ảnh:<br>
+      <input type="file" accept="image/*" (change)="changeListener($event)">
+      <img height="100px" width="125px" src="{{image}}" alt="">
+      <br>
+      Miêu tả:<br>
+      <input type="text" >
+      <br>
+      <button type="submit" class="primary">
+        <span>Đăng mặt hàng</span>
+      </button>
+    </div> -->

@@ -1,0 +1,71 @@
+<div class="account-body">
+  <mat-card class="account-card">
+    <mat-card-header>
+      <img mat-card-avatar src="{{ (currentUser | async)?.coverPhoto}}">
+      <mat-card-title>{{ (currentUser | async)?.firstName}}</mat-card-title>
+      <mat-card-subtitle>{{ (currentUser | async)?.lastName}}</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="{{product.imageBase64Encode}}" alt=""> -->
+    <mat-card-content>
+      Id: {{ (currentUser | async)?.email }} <br>
+      Số dư tài khoản: {{ (currentUser | async)?.accountBalance}} <br>
+      Số điện thoại: {{ (currentUser | async)?.phoneNumber}} <br>
+      Địa chỉ: {{ (currentUser | async)?.address.street}} , {{ (currentUser | async)?.address.city}} , {{ (currentUser |
+        async)?.address.country}}
+    </mat-card-content>
+  </mat-card>
+
+  <h2>Mặt hàng đã mua</h2>
+  <mat-grid-list cols="4" rowHeight="1:1.4" gutterSize="10px">
+    <mat-grid-tile *ngFor="let product of listProductBought | async">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{product.productName}}</mat-card-title>
+          <mat-card-subtitle>{{product.productType}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{product.imageBase64Encode}}" alt="">
+        <mat-card-content>
+          Mô tả: {{product.description}} <br>
+          Giá: {{product.pricePerUnit}} <br>
+          Số lượng: {{product.amount}}
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="buyProduct(product.productId, product.owner)">Thanh toán</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <h2>Mặt hàng đang rao bán</h2>
+  <!-- <table>
+  <tr *ngFor="let product of listProductSell | async">
+    <td>{{product.productName}}</td>
+    <td>{{product.productType}}</td>
+    <td>{{product.pricePerUnit}}</td>
+    <td>{{product.amount}}</td>
+    <td>{{product.description}}</td>
+    <td><img height="50px" width="50px" src="{{product.imageBase64Encode}}" alt=""></td>
+  </tr>
+</table> -->
+  <mat-grid-list cols="4" rowHeight="1:1.4" gutterSize="10px">
+    <mat-grid-tile *ngFor="let product of listProductSell | async">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{product.productName}}</mat-card-title>
+          <mat-card-subtitle>{{product.productType}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{product.imageBase64Encode}}" alt="">
+        <mat-card-content>
+          Mô tả: {{product.description}} <br>
+          Giá: {{product.pricePerUnit}} <br>
+          Số lượng: {{product.amount}}
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="buyProduct(product.productId, product.owner)">Thanh toán</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

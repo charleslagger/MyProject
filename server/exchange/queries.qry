@@ -1,0 +1,32 @@
+/**
+ * New query file
+ */
+query availableProducts{
+  description: "Select all products for sale"
+  statement:
+      SELECT uet.khoenguyen.exchange.Product
+          WHERE ((owner!=_$currentUserId) AND (productStatus == "SELLING"))
+}
+
+query myProductSelling{
+  description: "Select all products that are owned by me with status is selling"
+  statement:
+      SELECT uet.khoenguyen.exchange.Product
+          WHERE ((owner==_$ownerId) AND (productStatus == "SELLING"))
+          ORDER BY productName
+}
+
+query myProductBought{
+  description: "Select all products that are owned by me with status bough by me"
+  statement:
+      SELECT uet.khoenguyen.exchange.Product
+          WHERE ((owner==_$ownerId) AND (productStatus == "BOUGHT"))
+          ORDER BY productName
+}
+
+query listProductsInMyCart{
+  description: "Get all products that it's in my cart"
+  statement:
+    SELECT uet.khoenguyen.exchange.Product
+          WHERE ((cartStatus == _$ownerId) AND (productStatus == _$productStatus))
+}

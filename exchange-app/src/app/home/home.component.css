@@ -1,0 +1,12 @@
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.home-body
+{
+  width: 100%;
+  height: 100vh !important;
+  /* background: gray url('/assets/test/img/backgrounds/1.jpg');  */
+  background: gray url('https://wpblink.com/sites/default/files/wallpaper/abstract/65846/dark-grey-wallpapers-hd-65846-5776352.jpg');
+}

@@ -1,0 +1,28 @@
+export COMPOSER_PROVIDERS='{
+  "github": {
+    "provider": "github",
+    "module": "passport-github",
+    "clientID": "584e700a8223a3966a66",
+    "clientSecret": "ea07cb8501701c86ae769994fe5f4d517d895acc",
+    "authPath": "/auth/github",
+    "callbackURL": "/auth/github/callback",
+    "successRedirect": "consume://auth",
+    "failureRedirect": "/"
+  }
+}'
+
+export COMPOSER_PROVIDERS='{"github":{"provider":"github","module":"passport-github","clientID":"584e700a8223a3966a66","clientSecret":"ea07cb8501701c86ae769994fe5f4d517d895acc","authPath":"/auth/github","callbackURL":"/auth/github/callback","successRedirect":"consume://auth","failureRedirect":"/"}}'
+
+export COMPOSER_PROVIDERS='{"github":{"provider":"github","module":"passport-github","clientID":"584e700a8223a3966a66","clientSecret":"ea07cb8501701c86ae769994fe5f4d517d895acc","authPath":"/auth/github","callbackURL":"/auth/github/callback","successRedirect":"consume://auth","failureRedirect":"/"}}'
+
+
+
+///
+thesis, title,
+chuong 1: mo dau,
+chuong 2 background thu thap tai lieu tham khao (5->10 pages) ,
+Chuong 3: Setup, Demo application (20 pages) + test,
+Chuong 4: Ket luan  
+
+
+

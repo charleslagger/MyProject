@@ -1,0 +1,308 @@
+<section *ngIf="!authenticated">
+	<nav class="navbar navbar-fixed-top navbar-no-bg" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Bootstrap Navbar Menu Template</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="top-navbar-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Lịch sử giao dịch</a></li>
+					<li><a href="#">Giỏ hàng</a></li>
+					<li><a href="#">Tài khoản</a></li>
+					<li><a href="#">Đăng sản phẩm</a></li>
+					<li><a href="#">Nạp tiền</a></li>
+					<li><a class="btn btn-link-3" (click)="openLoginPopup()">Đăng nhập</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Top content -->
+	<div class="top-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text wow fadeInLeft">
+					<h1>Mua bán hàng tiện lợi hơn bao giờ hết</h1>
+					<div class="description">
+						<p class="medium-paragraph">
+							Tin cậy, xác thực, dễ sử dụng
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Features -->
+	<div class="features-container section-container">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-sm-12 features section-description wow fadeIn">
+					<h2>Ứng dụng blockchain vào thương mại điện tử</h2>
+					<div class="divider-1">
+						<div class="line"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 features-box wow fadeInLeft">
+					<div class="row">
+						<div class="col-sm-3 features-box-icon">
+							<i class="fa fa-twitter"></i>
+						</div>
+						<div class="col-sm-9">
+							<h3>Minh bạch</h3>
+							<p>
+								TODO
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 features-box wow fadeInLeft">
+					<div class="row">
+						<div class="col-sm-3 features-box-icon">
+							<i class="fa fa-instagram"></i>
+						</div>
+						<div class="col-sm-9">
+							<h3>Ngang hàng, phi tập trung</h3>
+							<p>
+								TODO
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 features-box wow fadeInLeft">
+					<div class="row">
+						<div class="col-sm-3 features-box-icon">
+							<i class="fa fa-magic"></i>
+						</div>
+						<div class="col-sm-9">
+							<h3>Bảo mật</h3>
+							<p>
+								TODO
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 features-box wow fadeInLeft">
+					<div class="row">
+						<div class="col-sm-3 features-box-icon">
+							<i class="fa fa-cloud"></i>
+						</div>
+						<div class="col-sm-9">
+							<h3>Đồng thuận</h3>
+							<p>
+								TODO
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 footer-copyright">
+					&copy; Phát triển sử dụng mã nguồn từ <a href="http://azmind.com">AZMIND</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</section>
+
+	
+
+
+
+<section *ngIf="authenticated && !loggedIn">
+  <!-- <h2>Vui lòng điền thêm thông tin của bạn</h2>
+  <form (ngSubmit)="onSignUp()" #signupForm="ngForm">
+    <table>
+      <colgroup>
+        <col span="1" style="width: 11%;">
+        <col span="1" style="width: 89%;">
+      </colgroup>
+      <tr>
+        <td>
+          <label>Email</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="signUp.email" #id="ngModel" name="email">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Tên</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="signUp.firstName" #firstName="ngModel" name="firstName">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Họ</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="signUp.surname" #surname="ngModel" name="surname">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Số điện thoại</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="signUp.phoneNum" #surname="ngModel" name="phoneNum">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Quốc gia</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="signUp.country" #surname="ngModel" name="country">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Thành phố</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="signUp.city" #surname="ngModel" name="city">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Phường</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="signUp.street" #surname="ngModel" name="street">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Ảnh đại diện</label>
+        </td>
+        <td>
+          <input type="file" accept="image/*" (change)="changeListener($event)">
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="primary">
+      <div *ngIf="!signUpInProgress">
+        <span>Đăng nhập</span>
+      </div>
+      <div *ngIf="signUpInProgress" class="ibm-spinner-indeterminate small loop">
+        <div class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle class="circle-path" cx="50" cy="50" r="20" />
+          </svg>
+        </div>
+      </div>
+    </button>
+	</form> -->
+	
+
+
+	<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Vui lòng điền thêm thông tin của bạn</h5>
+            <form (ngSubmit)="onSignUp()" #signupForm="ngForm" class="form-signin">
+              <div class="form-label-group">
+								<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus
+								[(ngModel)]="signUp.email" #id="ngModel" name="email">
+                <label for="inputEmail">Email</label>
+              </div>
+
+              <div class="form-label-group">
+								<input type="text" id="inputPassword" class="form-control" placeholder="Fist name" required
+								[(ngModel)]="signUp.firstName" #firstName="ngModel" name="firstName">
+                <label for="inputPassword">Tên</label>
+							</div>
+							
+							<div class="form-label-group">
+								<input type="text" id="inputPassword" class="form-control" placeholder="Surname" required
+								[(ngModel)]="signUp.surname" #surname="ngModel" name="surname">
+                <label for="inputPassword">Họ</label>
+							</div>
+							
+							<div class="form-label-group">
+								<input type="text" id="inputPassword" class="form-control" placeholder="Phone number" required
+								[(ngModel)]="signUp.phoneNum" #surname="ngModel" name="phoneNum">
+                <label for="inputPassword">Số điện thoại</label>
+							</div>
+							Địa chỉ
+							<div class="form-label-group">
+								<input type="text" id="inputPassword" class="form-control" placeholder="Country" required
+								[(ngModel)]="signUp.country" #surname="ngModel" name="country">
+                <label for="inputPassword">Quốc gia</label>
+							</div>
+							<div class="form-label-group">
+								<input type="text" id="inputPassword" class="form-control" placeholder="City" required
+								[(ngModel)]="signUp.city" #surname="ngModel" name="city">
+                <label for="inputPassword">Thành phố</label>
+              </div>
+							<div class="form-label-group">
+								<input type="text" id="inputPassword" class="form-control" placeholder="Street" required
+								[(ngModel)]="signUp.street" #surname="ngModel" name="street">
+                <label for="inputPassword">Phường</label>
+							</div>
+							
+							<label>Ảnh đại diện</label>
+							<input type="file" accept="image/*" (change)="changeListener($event)">
+              
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Đăng nhập</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="authenticated && loggedIn">
+	<nav class="navbar navbar-fixed-top navbar-no-bg" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Bootstrap Navbar Menu Template</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="top-navbar-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a routerLink="/home">Trang chủ</a></li>
+					<li><a routerLink="/history">Lịch sử giao dịch</a></li>
+					<li><a routerLink="/cart">Giỏ hàng</a></li>
+					<li><a routerLink="/account">Tài khoản</a></li>
+					<li><a routerLink="/sell">Đăng sản phẩm</a></li>
+					<li><a routerLink="/balance">Nạp tiền</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+  <router-outlet></router-outlet>
+</section>
